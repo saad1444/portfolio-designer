@@ -1,0 +1,514 @@
+
+
+                       <!-- Portfolio for a Designer
+                 Features: Work samples, about me, and contact information.
+ -->
+
+
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Portfolio - Designer</title>
+     <style>
+         * {
+             margin: 0;
+             padding: 0;
+             box-sizing: border-box;
+         }
+ 
+         body {
+             font-family: Arial, sans-serif;
+             background-color: #f9f9f9;
+             color: #333;
+         }
+ 
+         header {
+             background-color: #333;
+             color: white;
+             padding: 20px 0;
+             text-align: center;
+         }
+ 
+         header h1 {
+             margin: 0;
+             font-size: 36px;
+         }
+ 
+         nav {
+             background-color: #222;
+             padding: 10px 0;
+         }
+ 
+         nav ul {
+             list-style: none;
+             display: flex;
+             justify-content: center;
+         }nav {
+     background-color: #222;
+     padding: 10px 0;
+ }
+ 
+ nav ul {
+     list-style: none;
+     display: flex;
+     justify-content: center;
+ }
+ 
+ nav ul li {
+     margin: 0 15px;
+ }
+ 
+ nav ul li a {
+     color: white;
+     text-decoration: none;
+     font-size: 18px;
+     position: relative;
+     padding-bottom: 5px;
+     transition: color 0.3s ease; /* Smooth color transition */
+ }
+ 
+ nav ul li a::after {
+     content: '';
+     position: absolute;
+     width: 0;
+     height: 3px; /* Thicker line */
+     background-color: #ff8c00; /* Underline color */
+     bottom: 0;
+     left: 50%;
+     transition: width 0.4s ease, left 0.4s ease, transform 0.3s ease; /* Add scaling effect */
+     transform: scaleX(0); /* Initially scaled to 0 */
+     transform-origin: center; /* Scale from the center */
+ }
+ 
+ nav ul li a:hover::after {
+     width: 100%; /* Full width on hover */
+     left: 0; /* Start from the left */
+     transform: scaleX(1); /* Scale the underline */
+ }
+ 
+ nav ul li a:hover {
+     color: #ff8c00; /* Change text color on hover */
+ }
+ 
+         section {
+             padding: 40px 20px;
+         }
+ 
+         .about, .work-samples, .contact {
+             text-align: center;
+         }
+ 
+         .work-samples .gallery {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 20px;
+ }
+ 
+ .work-samples .gallery .item {
+     width: 30%;
+     background-color: #fff;
+     padding: 20px;
+     border-radius: 8px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+     transition: transform 0.6s ease, box-shadow 0.3s ease;
+ }
+ 
+ .work-samples .gallery .item:hover {
+     transform: scale(1.0);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+ }
+ 
+ .work-samples .gallery img {
+     width: 320px; /* Fixed width */
+     height: 320px; /* Fixed height */
+     object-fit: cover; /* Ensures images cover the area while maintaining their aspect ratio */
+     border-radius: 8px;
+     transition: transform 0.6s ease;
+ }
+ 
+ .work-samples .gallery .item:hover img {
+     transform: scale(1.1);
+ }
+ 
+ .work-samples .gallery .item:hover {
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+ }
+ 
+ 
+         .contact form {
+             max-width: 500px;
+             margin: 0 auto;
+             text-align: left;
+             background-color: #fff;
+             padding: 20px;
+             border-radius: 8px;
+             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         }
+ 
+         .contact form input,
+         .contact form textarea {
+             width: 100%;
+             padding: 10px;
+             margin: 10px 0;
+             border: 1px solid #ddd;
+             border-radius: 4px;
+         }
+ 
+         .contact form button {
+             background-color: #ff8c00;
+             color: white;
+             border: none;
+             padding: 10px 20px;
+             border-radius: 4px;
+             cursor: pointer;
+         }
+ 
+         .contact form button:hover {
+             background-color: #e76f00;
+         }
+ 
+         footer {
+     text-align: center;
+     background-color: #333;
+     color: white;
+     padding: 10px;
+     position: relative; /* Changed to relative */
+     bottom: 0;
+     width: 100%;
+     margin-top: 20px; /* Ensure there's some space above the footer */
+ }
+ 
+ body, html {
+     min-height: 100%; /* Ensure the page stretches to the full height */
+     margin: 0;
+     padding: 0;
+ }
+ 
+ .content {
+     min-height: 100%; /* Ensures content fills the available space */
+     padding-bottom: 50px; /* Prevent footer from overlapping content */
+ }
+ 
+ 
+ 
+ 
+ footer {
+     background-color: #333;
+     color: white;
+     padding: 40px 20px;
+     text-align: left;
+ }
+ 
+ .footer-content {
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     gap: 20px;
+ }
+ 
+ .footer-section {
+     width: 22%;
+     min-width: 200px;
+ }
+ 
+ .footer-section h4 {
+     margin-bottom: 10px;
+     font-size: 18px;
+     color: #ff8c00;
+ }
+ 
+ .footer-section ul {
+     list-style: none;
+     padding: 0;
+ }
+ 
+ .footer-section ul li {
+     margin-bottom: 10px;
+ }
+ 
+ .footer-section a {
+     text-decoration: none;
+     color: white;
+ }
+ 
+ .footer-section a:hover {
+     color: #ff8c00;
+ }
+ 
+ .social-links {
+     display: flex;
+     gap: 10px;
+ }
+ 
+ .social-links li a {
+     text-decoration: none;
+     color: white;
+ }
+ 
+ .footer-bottom {
+     text-align: center;
+     margin-top: 20px;
+     font-size: 14px;
+     color: #bbb;
+ }
+ 
+ .footer-bottom p {
+     margin: 5px 0;
+ }
+ 
+ 
+ 
+     </style>
+ </head>
+ <body>
+ 
+     <!-- Header -->
+     <header>
+         <h1>Designer Portfolio</h1>
+         <p>Showcasing My Creative Work and Design Skills</p>
+     </header>
+ 
+     <!-- Navbar -->
+     <nav>
+         <ul>
+             
+             <li><a href="#" onclick="showSection('work-samples')">Work Samples</a></li>
+             <li><a href="#" onclick="showSection('about')">About Me</a></li>
+             <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+         </ul>
+     </nav>
+ 
+    
+ 
+     <!-- Work Samples Section -->
+     <section id="work-samples" class="work-samples">
+         <h2>My Work Samples</h2>
+         <div class="gallery">
+             <!-- Image 1 -->
+             <div class="item">
+                 <img src="h1.avif" alt="Design Sample 1"><br><br>
+                 <h3>Project 1</h3>
+                 <p>Graphic design for a branding campaign</p>
+             </div>
+             <!-- Image 2 -->
+             <div class="item">
+                 <img src="premium_photo-1721879243046-b0014907da1a.avif" alt="Design Sample 2"><br><br>
+                 <h3>Project 2</h3>
+                 <p>Website design for a tech startup</p>
+             </div>
+             <!-- Image 3 -->
+             <div class="item">
+                 <img src="h2.webp" alt="Design Sample 3"><br><br>
+                 <h3>Project 3</h3>
+                 <p>Mobile app UI design</p>
+             </div>
+             <!-- Image 4 -->
+             <div class="item">
+                 <img src="sd1.webp" alt="Design Sample 4"><br><br>
+                 <h3>Project 4</h3>
+                 <p>Logo design for a local restaurant</p>
+             </div>
+             <!-- Image 5 -->
+             <div class="item">
+                 <img src="sd2.avif" alt="Design Sample 5"><br><br>
+                 <h3>Project 5</h3>
+                 <p>Social media graphics for a fashion brand</p>
+             </div>
+             <!-- Image 6 -->
+             <div class="item">
+                 <img src="sd3.avif" alt="Design Sample 6"><br><br>
+                 <h3>Project 6</h3>
+                 <p>Website design for a non-profit organization</p>
+             </div>
+             <!-- Image 7 -->
+             <div class="item">
+                 <img src="sd4.avif" alt="Design Sample 7"><br><br>
+                 <h3>Project 7</h3>
+                 <p>Packaging design for a new product line</p>
+             </div>
+             <!-- Image 8 -->
+             <div class="item">
+                 <img src="sd5.avif" alt="Design Sample 8"><br><br>
+                 <h3>Project 8</h3>
+                 <p>Brochure design for a corporate client</p>
+             </div>
+             <!-- Image 9 -->
+             <div class="item">
+                 <img src="sd6.avif" alt="Design Sample 9"><br><br>
+                 <h3>Project 9</h3>
+                 <p>UI/UX design for a mobile application</p>
+             </div>
+             <!-- Image 10 -->
+             <div class="item">
+                 <img src="sd7.avif" alt="Design Sample 10"><br><br>
+                 <h3>Project 10</h3>
+                 <p>Website redesign for an e-commerce store</p>
+             </div>
+             <!-- Image 11 -->
+             <div class="item">
+                 <img src="sd8.avif" alt="Design Sample 11"><br><br>
+                 <h3>Project 11</h3>
+                 <p>Branding design for a coffee shop</p>
+             </div>
+             <!-- Image 12 -->
+             <div class="item">
+                 <img src="sd9.webp" alt="Design Sample 12"><br><br>
+                 <h3>Project 12</h3>
+                 <p>Infographic design for an annual report</p>
+             </div>
+             <!-- Image 13 -->
+             <div class="item">
+                 <img src="sd11.avif" alt="Design Sample 13"><br><br>
+                 <h3>Project 13</h3>
+                 <p>Event poster design for a music festival</p>
+             </div>
+             <!-- Image 14 -->
+             <div class="item">
+                 <img src="sd12.avif" alt="Design Sample 14"><br><br>
+                 <h3>Project 14</h3>
+                 <p>Advertising design for a retail campaign</p>
+             </div>
+             <!-- Image 15 -->
+             <div class="item">
+                 <img src="sd13.avif" alt="Design Sample 15"><br><br>
+                 <h3>Project 15</h3>
+                 <p>Website design for a luxury brand</p>
+             </div>
+         </div>
+     </section>
+      <!-- About Me Section -->
+ <section id="about" class="about">
+     <h2>About Me</h2>
+     <p>Hi, I'm John Doe, a passionate designer and creative thinker, always looking for new ways to bring ideas to life. With over 8 years of experience in graphic design, web development, and digital arts, I specialize in creating visually stunning websites, branding, and interactive designs that make an impact.</p><br>
+ 
+     <p>From conceptualizing a brand's identity to crafting seamless user experiences, my goal is to bridge the gap between aesthetics and functionality. I believe in the power of design to tell stories, solve problems, and connect people.</p><br>
+ 
+     <h2>My Skills</h2><br>
+     <ul>
+         <li><b>Web Design & Development</b></li><br>
+         <li><b>HTML,</b></li><br>
+         <li><b>CSS,</b></li><br>
+         <li><b>JAVA SCRIPT,</b></li><br>
+         <li><b>BOOTSTRAP,</b></li><br>
+         <li><b>Responsive Design.</b></li><br>
+     </ul>
+ 
+     <h3>What I Do</h3><br>
+     <p>I am passionate about creating beautiful, user-friendly websites that deliver an exceptional experience for the user. My work revolves around:</p><br>
+     <ul>
+         <li>HTML: Crafting the structure of web pages using HTML, ensuring semantic and well-organized content that improves accessibility and SEO.</li><br>
+         <li>CSS: Designing visually appealing websites with CSS, ensuring responsive layouts that adapt perfectly to any screen size and providing smooth, interactive user experiences.</li><br>
+         <li>JavaScript: Adding interactivity and dynamic behavior to websites with JavaScript, including form validation, animations, and dynamic content updates.</li><br>
+         <li>Bootstrap: Leveraging Bootstrap to quickly build responsive, mobile-first websites with pre-designed components and flexible grid systems that save time while maintaining a professional look.</li><br>
+     </ul>
+     
+     <h3>Let's Collaborate!</h3><br>
+     <p>If you are looking for a designer who is not only skilled but also passionate about creating meaningful work, feel free to reach out! I am always open to new projects and collaborations. Let's bring your ideas to life and make something truly amazing!</p><br>
+ </section>
+ 
+     <!-- Contact Section -->
+     <section id="contact" class="contact">
+         <h2>Contact Me</h2><br>
+         <p>If you would like to work with me or just want to get in touch, fill out the form below:</p><br>
+         <form id="contact-form" onsubmit="submitForm(event)">
+             <label for="name">Name:</label>
+             <input type="text" id="name" name="name" required>
+ 
+             <label for="email">Email:</label>
+             <input type="email" id="email" name="email" required>
+ 
+             <label for="message">Message:</label>
+             <textarea id="message" name="message" rows="4" required></textarea>
+ 
+             <button type="submit">Send Message</button>
+         </form>
+     </section>
+ 
+    <!-- Footer -->
+ <footer>
+     <div class="footer-content">
+         <div class="footer-section">
+             <h4>About</h4>
+             <p>I'm a passionate designer with years of experience in creating stunning websites, branding, and digital arts. Let's connect and work together!</p>
+         </div>
+         
+         <div class="footer-section">
+             <h4>Quick Links</h4>
+             <ul>
+                 <li><a href="#">Home</a></li>
+                 <li><a href="#">About Me</a></li>
+                 <li><a href="#">Portfolio</a></li>
+                 <li><a href="#">Contact</a></li>
+             </ul>
+         </div>
+ 
+         <div class="footer-section">
+             <h4>Contact Information</h4>
+             <ul>
+                 <li><strong>Email:</strong> saad12@gmail.com</li>
+                 <li><strong>Phone:</strong> 09876543212</li>
+                 <li><strong>Address:</strong> Maripur Hawksbay Road JBCHS Karachi</li>
+             </ul>
+         </div>
+ 
+         <div class="footer-section">
+             <h4>Follow Me</h4>
+             <ul class="social-links">
+                 <li><a href="https://www.Facebook.com" target="_blank">Facebook</a></li>
+                 <li><a href="https://www.Instagram.com" target="_blank">Instagram</a></li>
+                 <li><a href="https://www.LinkedIn.com" target="_blank">LinkedIn</a></li>
+                 <li><a href="https://www.Twitter.com" target="_blank">Twitter</a></li>
+             </ul>
+         </div>
+     </div>
+ 
+     <div class="footer-bottom">
+         <p>&copy; 2025 Designer Portfolio. All rights reserved.</p>
+         <p>Created with 💡 by SAAD</p>
+     </div>
+ </footer>
+ 
+ 
+     <script>
+         function showSection(sectionId) {
+             // Hide all sections
+             document.querySelectorAll('section').forEach(function(section) {
+                 section.style.display = 'none';
+             });
+             // Show the selected section
+             document.getElementById(sectionId).style.display = 'block';
+         }
+ 
+         // Function to handle form submission
+         function submitForm(event) {
+             event.preventDefault();
+             alert('Your message has been sent!');
+             document.getElementById('contact-form').reset();
+         }
+ 
+         // Show About Me section by default
+         showSection('about');
+ 
+ 
+ 
+         function showSection(sectionId) {
+         // Hide all sections
+         document.querySelectorAll('section').forEach(function(section) {
+             section.style.display = 'none';
+         });
+         // Show the selected section
+         document.getElementById(sectionId).style.display = 'block';
+     }
+ 
+     // Show Work Samples section by default
+     showSection('work-samples');
+     </script>
+ 
+ </body>
+ </html>
+ 
